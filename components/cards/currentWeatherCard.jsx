@@ -1,34 +1,22 @@
-"use client";
-import React, { useEffect } from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 
 import { LocateIcon } from "lucide-react";
-import { useCurrentWeatherStore } from "@/store";
+
 import Image from "next/image";
 
 import GetTime from "@/helper/getTime";
 import { Droplets } from "lucide-react";
 import { Wind } from "lucide-react";
 
-const CurrentWeatherCard = () => {
-  const { fetchCurrentWeather } = useCurrentWeatherStore((state) => state);
-  const currentWeather = useCurrentWeatherStore(
-    (state) => state.currentWeather
-  );
-
-  useEffect(() => {
-    fetchCurrentWeather();
-  }, [fetchCurrentWeather]);
-
-  const { location, current } = currentWeather;
+const CurrentWeatherCard = async ({ current, location }) => {
   return (
     <Card className=" w-3/12 flex flex-col gap-y-8  ">
       <CardHeader>
         <div className="flex justify-between">
           <h3 className="text-xl font-medium">Friday</h3>
-          <GetTime />
+          <GetTime timezone={location?.localtime_epoch} />
         </div>
-        <div className="flex items-start gap-x-2">
+        <div className="flex items-start gap-x-2 ">
           <h3 className="text-xl">{location?.name}</h3>
           <LocateIcon className="w-4 h-4" />
         </div>
