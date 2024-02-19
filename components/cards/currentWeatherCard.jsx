@@ -9,11 +9,15 @@ import { Droplets } from "lucide-react";
 import { Wind } from "lucide-react";
 
 const CurrentWeatherCard = async ({ current, location }) => {
+  const day = new Date(current?.last_updated_epoch * 1000).toLocaleString(
+    "default",
+    { weekday: "long" }
+  );
   return (
     <Card className=" w-3/12 flex flex-col gap-y-8  ">
       <CardHeader>
         <div className="flex justify-between">
-          <h3 className="text-xl font-medium">Friday</h3>
+          <h3 className="text-xl font-medium">{day}</h3>
           <GetTime timezone={location?.localtime_epoch} />
         </div>
         <div className="flex items-start gap-x-2 ">
@@ -22,7 +26,7 @@ const CurrentWeatherCard = async ({ current, location }) => {
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-8xl text-center font-bold">25°</p>
+        <p className="text-8xl text-center font-bold">{current?.temp_c}°</p>
       </CardContent>
       <CardFooter className="flex flex-col justify-start items-start">
         <div>
