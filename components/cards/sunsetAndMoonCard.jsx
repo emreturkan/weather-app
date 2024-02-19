@@ -8,13 +8,9 @@ import { Sunrise } from "lucide-react";
 const SunsetandMoon = ({ forecastWeather }) => {
   const forecast = forecastWeather?.forecast?.forecastday[0]?.astro;
 
-  console.log("====================================");
-  console.log("forecastWeather", forecastWeather.forecast.forecastday[0].hour);
-  console.log("====================================");
-
   return (
-    <div className="grid h-max gap-x-4 grid-cols-2">
-      <Card className="w-48 h-max flex flex-col gap-y-2">
+    <div className="grid grid-cols-2 gap-4 ">
+      <Card className="w-full h-max flex flex-col gap-y-2">
         <CardHeader>
           <div className="!flex items-end justify-start  gap-x-2">
             <SunsetIcon className="w-6 h-6" />
@@ -32,7 +28,7 @@ const SunsetandMoon = ({ forecastWeather }) => {
           </div>
         </CardFooter>
       </Card>
-      <Card className="w-48 h-max flex flex-col gap-y-2">
+      <Card className="w-full h-max flex flex-col gap-y-2">
         <CardHeader>
           <div className="!flex items-end justify-start  gap-x-2">
             <MoonIcon className="w-6 h-6" />

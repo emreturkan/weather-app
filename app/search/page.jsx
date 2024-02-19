@@ -7,14 +7,15 @@ import {
   GetForecastWeather,
 } from "@/helper/actions/getWeatherData";
 
-export default async function Home() {
-  const currentWeather = await GetCurrentWeather();
+export default async function SearchPage({ searchParams }) {
+  const search = searchParams?.q || "istanbul";
+  const currentWeather = await GetCurrentWeather(search);
   const { location, current } = currentWeather;
 
-  const forecastWeather = await GetForecastWeather();
+  const forecastWeather = await GetForecastWeather(search);
 
   return (
-    <div className="flex-1 flex gap-4 flex-col sm:flex-row  ">
+    <div className="flex-1 flex gap-4 flex-col sm:flex-row flex-wrap">
       <CurrentWeatherCard current={current} location={location} />
       <AirQualityCard current={current} />
       <SunsetandMoon forecastWeather={forecastWeather} />

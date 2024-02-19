@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
@@ -9,9 +9,30 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import { useSearchStore } from "@/store";
+import { GetSearchWeather } from "@/helper/actions/getWeatherData";
+import { useRouter } from "next/navigation";
 
 const CommandSearch = () => {
+  const router = useRouter();
+  const { search, setSearch } = useSearchStore();
   const [openMenu, setOpenMenu] = useState(false);
+  const [data, setData] = useState([]);
+  const getSearch = async (search) => {
+    const response = await GetSearchWeather(search);
+    setData(response);
+  };
+
+  useEffect(() => {
+    getSearch(search);
+  }, [search]);
+
+  const handleSelect = (search) => {
+    setSearch(search);
+    getSearch(search);
+    setOpenMenu(false);
+    router.push(`/search?q=${search}`);
+  };
 
   return (
     <>
@@ -29,13 +50,22 @@ const CommandSearch = () => {
         </p>
       </Button>
       <CommandDialog open={openMenu} onOpenChange={setOpenMenu}>
-        <CommandInput placeholder="Search city..." />
+        <CommandInput
+          onValueChange={(e) => setSearch(e)}
+          placeholder="Search city..."
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
-            <CommandItem>sa</CommandItem>
-
-            <CommandItem>sxx</CommandItem>
+            {data.length > 0 &&
+              data.map((item) => (
+                <CommandItem
+                  key={item.id}
+                  onSelect={() => handleSelect(item.name)}
+                >
+                  {item.name}
+                </CommandItem>
+              ))}
           </CommandGroup>
         </CommandList>
       </CommandDialog>

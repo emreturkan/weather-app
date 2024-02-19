@@ -6,15 +6,15 @@ import { Dot } from "lucide-react";
 
 const AirQualityCard = ({ current }) => {
   const air_quality = () => {
-    if (current.air_quality["us-epa-index"] === 1) {
+    if (current?.air_quality["us-epa-index"] === 1) {
       return "Good";
-    } else if (current.air_quality["us-epa-index"] === 2) {
+    } else if (current?.air_quality["us-epa-index"] === 2) {
       return "Moderate";
-    } else if (current.air_quality["us-epa-index"] === 3) {
+    } else if (current?.air_quality["us-epa-index"] === 3) {
       return "Unhealthy for sensitive groups";
-    } else if (current.air_quality["us-epa-index"] === 4) {
+    } else if (current?.air_quality["us-epa-index"] === 4) {
       return "Unhealthy";
-    } else if (current.air_quality["us-epa-index"] === 5) {
+    } else if (current?.air_quality["us-epa-index"] === 5) {
       return "Very unhealthy";
     } else {
       return "Hazardous";
@@ -22,7 +22,7 @@ const AirQualityCard = ({ current }) => {
   };
 
   return (
-    <Card className="w-5/12 h-full flex flex-col gap-y-2">
+    <Card className="w-full  md:w-5/12 h-full flex flex-col gap-y-2">
       <CardHeader>
         <div className="flex items-center gap-x-2">
           <SunIcon className="w-4 h-4" />
