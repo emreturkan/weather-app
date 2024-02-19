@@ -12,7 +12,7 @@ const GetTime = ({ timezone }) => {
     return () => clearInterval(interval);
   }, []);
 
-  const localTime = new Date(currentTime.getTime() + timezone * 60 * 60 * 1000); // Zaman dilimini ekleyerek yerel zamanı hesapla
+  const localTime = new Date(currentTime.getTime() + timezone * 0 * 1000);
 
   return (
     <div className="text-lg font-medium" suppressHydrationWarning>
