@@ -1,11 +1,13 @@
-"use client";
-
 import CurrentWeatherCard from "@/components/cards/currentWeatherCard";
+import { GetCurrentWeather } from "@/helper/actions/getWeatherData";
 
-export default function Home() {
+export default async function Home() {
+  const currentWeather = await GetCurrentWeather();
+  const { location, current } = currentWeather;
+
   return (
     <div className="">
-      <CurrentWeatherCard />
+      <CurrentWeatherCard current={current} location={location} />
     </div>
   );
 }
