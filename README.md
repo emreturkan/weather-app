@@ -1,6 +1,6 @@
 ### Built With
 
-* [![Next][Next.js]][Next-url] * [![Shadcn][Shadcn-img]][Shadcn-url]
+[![Next][Next.js]][Next-url]  [![Shadcn][Shadcn-img]][Shadcn-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
