@@ -64,7 +64,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[Shadcn-img]:https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/www/public/android-chrome-512x512.png](https://img.shields.io/badge/https%3A%2F%2Fraw.githubusercontent.com%2Fshadcn-ui%2Fui%2Fmain%2Fapps%2Fwww%2Fpublic%2Fandroid-chrome-512x512.png
+[Shadcn-img]:https://img.shields.io/badge/Shadcn-black?style=for-the-badge&logo=shadcnui&logoColor=white
 [Shadcn-url]:https://ui.shadcn.com/
 [React-url]: https://reactjs.org/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
