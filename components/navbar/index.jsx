@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="flex w-full items-center justify-between ">
       <div />
-      <div className="flex p-4 items-center justify-between gap-x-2">
+      <div className="flex py-4 items-center justify-between gap-x-2">
         <CommandSearch />
         <ThemeChanger />
         <Button className="h-10 shrink-0 flex items-center gap-x-2">
