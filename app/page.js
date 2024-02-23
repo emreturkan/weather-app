@@ -1,5 +1,6 @@
 import AirQualityCard from "@/components/cards/airQualityCard";
 import CurrentWeatherCard from "@/components/cards/currentWeatherCard";
+import ForecastDays from "@/components/cards/forecastDays";
 import SunsetandMoon from "@/components/cards/sunsetAndMoonCard";
 
 import {
@@ -15,7 +16,10 @@ export default async function Home() {
 
   return (
     <div className="flex-1 flex gap-4 flex-col sm:flex-row  ">
-      <CurrentWeatherCard current={current} location={location} />
+      <div className="flex flex-col flex-1 gap-y-4 ">
+        <CurrentWeatherCard current={current} location={location} />
+        <ForecastDays forecastWeather={forecastWeather} />
+      </div>
       <AirQualityCard current={current} />
       <SunsetandMoon forecastWeather={forecastWeather} />
     </div>

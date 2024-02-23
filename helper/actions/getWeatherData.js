@@ -16,7 +16,7 @@ export const GetForecastWeather = async (search) => {
 
 export const GetSearchWeather = async (search) => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_WEATHER_SEARCH_API}&q=${search}`
+    `${process.env.NEXT_PUBLIC_WEATHER_SEARCH_API}&q=${search || "istanbul"}`
   );
   const data = await response.json();
   return data;

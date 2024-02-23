@@ -14,7 +14,7 @@ const CurrentWeatherCard = async ({ current, location }) => {
     { weekday: "long" }
   );
   return (
-    <Card className="w-full xl:w-3/12  flex flex-col gap-y-8  ">
+    <Card className="w-full  flex flex-col gap-y-8  ">
       <CardHeader>
         <div className="flex justify-between">
           <h3 className="text-xl font-medium">{day}</h3>
