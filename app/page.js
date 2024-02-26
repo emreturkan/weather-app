@@ -16,12 +16,12 @@ export default async function Home() {
   const forecastWeather = await GetForecastWeather();
 
   return (
-    <div className="flex-1 flex gap-4 flex-col sm:flex-row ">
-      <div className="flex w-full lg:w-9/12 flex-col  gap-y-4 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 ">
+      <div className="flex w-full flex-col  gap-y-4 ">
         <CurrentWeatherCard current={current} location={location} />
         <ForecastDays forecastWeather={forecastWeather} />
       </div>
-      <div className="w-full flex flex-col gap-y-4 h-full">
+      <div className="w-full flex flex-col gap-y-4 ">
         <AirQualityCard current={current} />
         <ForecastHours forecastWeather={forecastWeather} />
       </div>

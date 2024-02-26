@@ -22,7 +22,7 @@ const AirQualityCard = ({ current }) => {
   };
 
   return (
-    <Card className="w-full   h-full flex flex-col gap-y-4">
+    <Card className="w-full    flex flex-col gap-y-4">
       <CardHeader>
         <div className="flex items-center gap-x-2">
           <SunIcon className="w-4 h-4" />
