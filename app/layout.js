@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/provider/themeNextProvider";
 import Navbar from "@/components/navbar";
 
@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className}, !my-0 container !mx-auto flex min-h-screen flex-col  antialiased selection:bg-black selection:text-white dark:bg-black dark:selection:bg-white dark:selection:text-black `}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
